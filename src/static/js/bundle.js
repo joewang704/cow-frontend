@@ -119,19 +119,6 @@
 	    ), document.getElementById('root'));
 	  });
 	}
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(state, 'state', '/Users/joe/workspace/smael/app/src/client.js');
-
-	  __REACT_HOT_LOADER__.register(store, 'store', '/Users/joe/workspace/smael/app/src/client.js');
-	})();
-
-	;
 
 /***/ },
 /* 2 */
@@ -21403,21 +21390,7 @@
 	  calendar: _calendar2.default
 	});
 
-	var _default = reducers;
-	exports.default = _default;
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(reducers, 'reducers', '/Users/joe/workspace/smael/app/src/ducks/index.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/ducks/index.js');
-	})();
-
-	;
+	exports.default = reducers;
 
 /***/ },
 /* 185 */
@@ -21478,8 +21451,7 @@
 	  }
 	};
 
-	var _default = reducer;
-	exports.default = _default;
+	exports.default = reducer;
 	var createItem = exports.createItem = function createItem(text, date) {
 	  return function (dispatch) {
 	    (0, _api.createItemInDb)({
@@ -21538,33 +21510,6 @@
 	    });
 	  };
 	};
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(ADD_ITEM, 'ADD_ITEM', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-
-	  __REACT_HOT_LOADER__.register(EDIT_ITEM, 'EDIT_ITEM', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-
-	  __REACT_HOT_LOADER__.register(REMOVE_ITEM, 'REMOVE_ITEM', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-
-	  __REACT_HOT_LOADER__.register(createItem, 'createItem', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-
-	  __REACT_HOT_LOADER__.register(editItem, 'editItem', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-
-	  __REACT_HOT_LOADER__.register(deleteItem, 'deleteItem', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-
-	  __REACT_HOT_LOADER__.register(initialState, 'initialState', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-
-	  __REACT_HOT_LOADER__.register(reducer, 'reducer', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/ducks/items.js');
-	})();
-
-	;
 
 /***/ },
 /* 186 */
@@ -26630,33 +26575,6 @@
 	    return res.json();
 	  });
 	};
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(getGroups, 'getGroups', '/Users/joe/workspace/smael/app/src/utils/api.js');
-
-	  __REACT_HOT_LOADER__.register(getItems, 'getItems', '/Users/joe/workspace/smael/app/src/utils/api.js');
-
-	  __REACT_HOT_LOADER__.register(saveGroup, 'saveGroup', '/Users/joe/workspace/smael/app/src/utils/api.js');
-
-	  __REACT_HOT_LOADER__.register(createItemInDb, 'createItemInDb', '/Users/joe/workspace/smael/app/src/utils/api.js');
-
-	  __REACT_HOT_LOADER__.register(updateItemInDb, 'updateItemInDb', '/Users/joe/workspace/smael/app/src/utils/api.js');
-
-	  __REACT_HOT_LOADER__.register(deleteItemInDb, 'deleteItemInDb', '/Users/joe/workspace/smael/app/src/utils/api.js');
-
-	  __REACT_HOT_LOADER__.register(deleteGroupInDb, 'deleteGroupInDb', '/Users/joe/workspace/smael/app/src/utils/api.js');
-
-	  __REACT_HOT_LOADER__.register(url, 'url', '/Users/joe/workspace/smael/app/src/utils/api.js');
-
-	  __REACT_HOT_LOADER__.register(api, 'api', '/Users/joe/workspace/smael/app/src/utils/api.js');
-	})();
-
-	;
 
 /***/ },
 /* 188 */
@@ -27464,30 +27382,12 @@
 	  }
 	};
 
-	var _default = reducer;
-	exports.default = _default;
+	exports.default = reducer;
 	var clearDaruma = exports.clearDaruma = function clearDaruma() {
 	  return {
 	    type: CLEAR_DARUMA
 	  };
 	};
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(CLEAR_DARUMA, 'CLEAR_DARUMA', '/Users/joe/workspace/smael/app/src/ducks/daruma.js');
-
-	  __REACT_HOT_LOADER__.register(clearDaruma, 'clearDaruma', '/Users/joe/workspace/smael/app/src/ducks/daruma.js');
-
-	  __REACT_HOT_LOADER__.register(reducer, 'reducer', '/Users/joe/workspace/smael/app/src/ducks/daruma.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/ducks/daruma.js');
-	})();
-
-	;
 
 /***/ },
 /* 193 */
@@ -27547,31 +27447,7 @@
 	  }
 	};
 
-	var _default = ui;
-	exports.default = _default;
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(ADD_ITEM_PLACEHOLDER, 'ADD_ITEM_PLACEHOLDER', '/Users/joe/workspace/smael/app/src/ducks/ui.js');
-
-	  __REACT_HOT_LOADER__.register(REMOVE_ITEM_PLACEHOLDER, 'REMOVE_ITEM_PLACEHOLDER', '/Users/joe/workspace/smael/app/src/ducks/ui.js');
-
-	  __REACT_HOT_LOADER__.register(createItemPlaceholder, 'createItemPlaceholder', '/Users/joe/workspace/smael/app/src/ducks/ui.js');
-
-	  __REACT_HOT_LOADER__.register(deleteItemPlaceholder, 'deleteItemPlaceholder', '/Users/joe/workspace/smael/app/src/ducks/ui.js');
-
-	  __REACT_HOT_LOADER__.register(initialState, 'initialState', '/Users/joe/workspace/smael/app/src/ducks/ui.js');
-
-	  __REACT_HOT_LOADER__.register(ui, 'ui', '/Users/joe/workspace/smael/app/src/ducks/ui.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/ducks/ui.js');
-	})();
-
-	;
+	exports.default = ui;
 
 /***/ },
 /* 194 */
@@ -27618,37 +27494,13 @@
 	  }
 	};
 
-	var _default = reducer;
-	exports.default = _default;
+	exports.default = reducer;
 	var nextWeek = exports.nextWeek = function nextWeek() {
 	  return { type: NEXT_WEEK };
 	};
 	var prevWeek = exports.prevWeek = function prevWeek() {
 	  return { type: PREV_WEEK };
 	};
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(nextWeek, 'nextWeek', '/Users/joe/workspace/smael/app/src/ducks/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(prevWeek, 'prevWeek', '/Users/joe/workspace/smael/app/src/ducks/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(NEXT_WEEK, 'NEXT_WEEK', '/Users/joe/workspace/smael/app/src/ducks/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(PREV_WEEK, 'PREV_WEEK', '/Users/joe/workspace/smael/app/src/ducks/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(initialState, 'initialState', '/Users/joe/workspace/smael/app/src/ducks/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(reducer, 'reducer', '/Users/joe/workspace/smael/app/src/ducks/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/ducks/calendar.js');
-	})();
-
-	;
 
 /***/ },
 /* 195 */
@@ -41732,21 +41584,7 @@
 	  );
 	};
 
-	var _default = App;
-	exports.default = _default;
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(App, 'App', '/Users/joe/workspace/smael/app/src/components/App.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/components/App.js');
-	})();
-
-	;
+	exports.default = App;
 
 /***/ },
 /* 300 */
@@ -41899,9 +41737,7 @@
 	  return WeekView;
 	}(_react.Component);
 
-	var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactDnd.DragDropContext)(_reactDndHtml5Backend2.default)(WeekView));
-
-	exports.default = _default;
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactDnd.DragDropContext)(_reactDndHtml5Backend2.default)(WeekView));
 
 
 	var leftArrowStyle = {
@@ -41926,29 +41762,6 @@
 	  textTransform: 'uppercase',
 	  fontWeight: 'bold'
 	};
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(mapStateToProps, 'mapStateToProps', '/Users/joe/workspace/smael/app/src/components/WeekView.js');
-
-	  __REACT_HOT_LOADER__.register(mapDispatchToProps, 'mapDispatchToProps', '/Users/joe/workspace/smael/app/src/components/WeekView.js');
-
-	  __REACT_HOT_LOADER__.register(WeekView, 'WeekView', '/Users/joe/workspace/smael/app/src/components/WeekView.js');
-
-	  __REACT_HOT_LOADER__.register(leftArrowStyle, 'leftArrowStyle', '/Users/joe/workspace/smael/app/src/components/WeekView.js');
-
-	  __REACT_HOT_LOADER__.register(rightArrowStyle, 'rightArrowStyle', '/Users/joe/workspace/smael/app/src/components/WeekView.js');
-
-	  __REACT_HOT_LOADER__.register(monthStyle, 'monthStyle', '/Users/joe/workspace/smael/app/src/components/WeekView.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/components/WeekView.js');
-	})();
-
-	;
 
 /***/ },
 /* 301 */
@@ -49486,23 +49299,6 @@
 	var isCurrentDate = exports.isCurrentDate = function isCurrentDate(dayMoment) {
 	  return dayMoment.isSame(new Date(), 'day');
 	};
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(dayMomentToStr, 'dayMomentToStr', '/Users/joe/workspace/smael/app/src/utils/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(dayMomentToAbrvStr, 'dayMomentToAbrvStr', '/Users/joe/workspace/smael/app/src/utils/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(weekFromStartDate, 'weekFromStartDate', '/Users/joe/workspace/smael/app/src/utils/calendar.js');
-
-	  __REACT_HOT_LOADER__.register(isCurrentDate, 'isCurrentDate', '/Users/joe/workspace/smael/app/src/utils/calendar.js');
-	})();
-
-	;
 
 /***/ },
 /* 448 */
@@ -49565,25 +49361,7 @@
 
 	var Container = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_DayColumn2.default);
 
-	var _default = Container;
-	exports.default = _default;
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(mapStateToProps, 'mapStateToProps', '/Users/joe/workspace/smael/app/src/components/DayColumn/index.js');
-
-	  __REACT_HOT_LOADER__.register(mapDispatchToProps, 'mapDispatchToProps', '/Users/joe/workspace/smael/app/src/components/DayColumn/index.js');
-
-	  __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/joe/workspace/smael/app/src/components/DayColumn/index.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/components/DayColumn/index.js');
-	})();
-
-	;
+	exports.default = Container;
 
 /***/ },
 /* 449 */
@@ -49703,26 +49481,7 @@
 	  ));
 	};
 
-	var _default = (0, _reactDnd.DropTarget)('item', columnTarget, collect)(DayColumn);
-
-	exports.default = _default;
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(columnTarget, 'columnTarget', '/Users/joe/workspace/smael/app/src/components/DayColumn/DayColumn.js');
-
-	  __REACT_HOT_LOADER__.register(collect, 'collect', '/Users/joe/workspace/smael/app/src/components/DayColumn/DayColumn.js');
-
-	  __REACT_HOT_LOADER__.register(DayColumn, 'DayColumn', '/Users/joe/workspace/smael/app/src/components/DayColumn/DayColumn.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/components/DayColumn/DayColumn.js');
-	})();
-
-	;
+	exports.default = (0, _reactDnd.DropTarget)('item', columnTarget, collect)(DayColumn);
 
 /***/ },
 /* 450 */
@@ -49874,9 +49633,7 @@
 	  store: _react.PropTypes.object
 	};
 
-	var _default = (0, _reactDnd.DragSource)('item', itemSource, collect)(Item);
-
-	exports.default = _default;
+	exports.default = (0, _reactDnd.DragSource)('item', itemSource, collect)(Item);
 
 
 	var closeIconStyle = {
@@ -49894,27 +49651,6 @@
 	  borderStyle: 'none',
 	  width: '100%'
 	};
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(itemSource, 'itemSource', '/Users/joe/workspace/smael/app/src/components/Item.js');
-
-	  __REACT_HOT_LOADER__.register(collect, 'collect', '/Users/joe/workspace/smael/app/src/components/Item.js');
-
-	  __REACT_HOT_LOADER__.register(Item, 'Item', '/Users/joe/workspace/smael/app/src/components/Item.js');
-
-	  __REACT_HOT_LOADER__.register(closeIconStyle, 'closeIconStyle', '/Users/joe/workspace/smael/app/src/components/Item.js');
-
-	  __REACT_HOT_LOADER__.register(textBoxStyle, 'textBoxStyle', '/Users/joe/workspace/smael/app/src/components/Item.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/components/Item.js');
-	})();
-
-	;
 
 /***/ },
 /* 451 */
@@ -50041,8 +49777,7 @@
 	  store: _react.PropTypes.object
 	};
 
-	var _default = ItemPlaceholder;
-	exports.default = _default;
+	exports.default = ItemPlaceholder;
 
 
 	var closeIconStyle = {
@@ -50052,21 +49787,6 @@
 	  zIndex: 10,
 	  color: '#eee'
 	};
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(ItemPlaceholder, 'ItemPlaceholder', '/Users/joe/workspace/smael/app/src/components/ItemPlaceholder.js');
-
-	  __REACT_HOT_LOADER__.register(closeIconStyle, 'closeIconStyle', '/Users/joe/workspace/smael/app/src/components/ItemPlaceholder.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/components/ItemPlaceholder.js');
-	})();
-
-	;
 
 /***/ },
 /* 452 */
@@ -50104,25 +49824,7 @@
 
 	var Container = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Daruma2.default);
 
-	var _default = Container;
-	exports.default = _default;
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(mapStateToProps, 'mapStateToProps', '/Users/joe/workspace/smael/app/src/components/Daruma/index.js');
-
-	  __REACT_HOT_LOADER__.register(mapDispatchToProps, 'mapDispatchToProps', '/Users/joe/workspace/smael/app/src/components/Daruma/index.js');
-
-	  __REACT_HOT_LOADER__.register(Container, 'Container', '/Users/joe/workspace/smael/app/src/components/Daruma/index.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/components/Daruma/index.js');
-	})();
-
-	;
+	exports.default = Container;
 
 /***/ },
 /* 453 */
@@ -50204,23 +49906,7 @@
 
 	Daruma.propTypes = propTypes;
 
-	var _default = Daruma;
-	exports.default = _default;
-	;
-
-	(function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(propTypes, 'propTypes', '/Users/joe/workspace/smael/app/src/components/Daruma/Daruma.js');
-
-	  __REACT_HOT_LOADER__.register(Daruma, 'Daruma', '/Users/joe/workspace/smael/app/src/components/Daruma/Daruma.js');
-
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/joe/workspace/smael/app/src/components/Daruma/Daruma.js');
-	})();
-
-	;
+	exports.default = Daruma;
 
 /***/ },
 /* 454 */

@@ -18,6 +18,9 @@ export const login = (token) => {
 
 export const checkAuthMiddleware = (req, res, next) => {
   try {
+    if (!req.cookies['cow_token']) {
+      throw new Error()
+    }
     req.token = req.cookies['cow_token']
     return next()
   } catch (err) {
