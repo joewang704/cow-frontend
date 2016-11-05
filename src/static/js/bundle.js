@@ -27472,7 +27472,7 @@
 	var PREV_WEEK = 'PREV_WEEK';
 
 	var initialState = (0, _immutable.fromJS)({
-	  activeWeekStartDate: (0, _moment2.default)().startOf('isoWeek').valueOf()
+	  activeWeekStartDate: (0, _moment2.default)().startOf('week').valueOf()
 	});
 
 	var reducer = function reducer() {
@@ -41657,6 +41657,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(WeekView).call(this, props));
 
 	    _this.handleArrowKeys = _this.handleArrowKeys.bind(_this);
+	    console.log(props.startDateMoment);
 	    return _this;
 	  }
 
