@@ -1,6 +1,8 @@
 import rp from 'request-promise'
 
-const url = 'http://localhost:8888'
+const url = process.env.NODE_ENV === 'dev' ?
+  'http://localhost:8888' :
+  'http://cow-backend.herokuapp.com'
 
 export const request = (endpoint, method) => {
   return rp({
