@@ -1,4 +1,11 @@
 {
-  "presets": ["es2015", "react"],
-  "plugins": ["css-modules-transform", "react-hot-loader/babel"]
+  "env": {
+    "dev": {
+      "presets": ["es2015", "react"],
+      "plugins": ["react-hot-loader/babel"]
+    },
+    "prod": {
+      "presets": ["es2015", "react"]
+    }
+  }
 }
