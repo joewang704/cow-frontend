@@ -17,6 +17,8 @@ import { checkAuthMiddleware, login, register } from './auth.js'
 import { getCookies } from './utils.js'
 import jwt from 'jsonwebtoken'
 
+const isDevEnvironment = process.env.NODE_ENV === 'dev'
+
 const app = express()
 const portNum = process.env.PORT || 8000
 
@@ -25,7 +27,7 @@ app.use(cookieParser())
 
 app.use('/static', express.static(`${__dirname}/../static`))
 
-if (process.env.NODE_ENV === 'dev') {
+if (isDevEnvironment) {
   const compiler = webpack(webpackConfig)
   app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
@@ -66,7 +68,6 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/', checkAuthMiddleware, (req, res) => {
-  console.log(process.env.NODE_ENV)
   getInitialStoreState(req.token).then((initialState) => {
     const store = createStore(reducers, initialState)
     let component
@@ -105,7 +106,7 @@ const renderFullPage = (component, initialState) => {
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(transit.toJSON(initialState))}
         </script>
-        <script src="/webpack/bundle.js"></script>
+        <script src="${isDevEnvironment ? '/webpack/bundle.js' : '/static/js/bundle.js'}"></script>
       </body>
     </html>
   `

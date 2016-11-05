@@ -25,6 +25,9 @@ export const getGroups = () => {
 export const getItems = (token) => {
   return requestBasicAuth('/items', 'GET', token)
     .then((items) => {
+      if (items.success === 'false') {
+        throw new Error('Backend error')
+      }
       return items.reduce((obj, {
         id,
         text,
