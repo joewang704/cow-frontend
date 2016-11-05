@@ -27480,6 +27480,7 @@
 	  var _ref = arguments[1];
 	  var type = _ref.type;
 
+	  console.log((0, _moment2.default)(state.toJS())._d);
 	  switch (type) {
 	    case NEXT_WEEK:
 	      return state.update('activeWeekStartDate', function (momentDate) {
@@ -41657,7 +41658,6 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(WeekView).call(this, props));
 
 	    _this.handleArrowKeys = _this.handleArrowKeys.bind(_this);
-	    console.log(props.startDateMoment);
 	    return _this;
 	  }
 
