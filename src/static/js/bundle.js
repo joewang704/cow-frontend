@@ -91,6 +91,7 @@
 
 	console.log(state);
 	console.log((0, _moment2.default)(state.calendar.get('activeWeekStartDate')));
+	state.calendar = state.calendar.set('activeWeekStartDate', (0, _moment2.default)().startOf('week').valueOf());
 
 	var store = (0, _redux.createStore)(_ducks2.default, state, (0, _redux.applyMiddleware)(_reduxThunk2.default));
 

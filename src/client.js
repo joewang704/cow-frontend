@@ -13,6 +13,7 @@ let state = transit.fromJSON(window.__INITIAL_STATE__)
 
 console.log(state)
 console.log(moment(state.calendar.get('activeWeekStartDate')))
+state.calendar = state.calendar.set('activeWeekStartDate', moment().startOf('week').valueOf())
 
 const store = createStore(
   rootReducer,
