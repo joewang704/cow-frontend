@@ -9,6 +9,7 @@ const initialState = fromJS({
 })
 
 const reducer = (state = initialState, { type }) => {
+  console.log(type)
   console.log(moment(moment().startOf('isoWeek').valueOf())._d)
   console.log(moment(state.toJS().activeWeekStartDate)._d)
   console.log(moment(state.get('activeWeekStartDate'))._d)
