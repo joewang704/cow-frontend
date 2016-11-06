@@ -80,6 +80,7 @@ app.get('/', checkAuthMiddleware, (req, res) => {
     } catch (err) {
       return res.send(`Server error: ${err}`)
     }
+    console.log(store.getState())
     return res.send(renderFullPage(component, store.getState()))
   }).catch((err) => res.send(`Server error: ${err}`))
 })

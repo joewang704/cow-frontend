@@ -11,6 +11,9 @@ import moment from 'moment'
 
 let state = transit.fromJSON(window.__INITIAL_STATE__)
 
+console.log(state)
+console.log(moment(state.calendar.get('activeWeekStartDate')))
+
 const store = createStore(
   rootReducer,
   state,

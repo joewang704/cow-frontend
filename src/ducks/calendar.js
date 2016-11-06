@@ -9,9 +9,9 @@ const initialState = fromJS({
 })
 
 const reducer = (state = initialState, { type }) => {
-  if (moment(state.get('activeWeekStartDate')).format('ddd') !== 'Sun') {
+  /*if (moment(state.get('activeWeekStartDate')).format('ddd') !== 'Sun') {
     return state.set('activeWeekStartDate', moment().startOf('week').valueOf())
-  }
+  }*/
   switch (type) {
     case NEXT_WEEK:
       return state.update('activeWeekStartDate', momentDate => moment(momentDate).add(1, 'weeks').valueOf())

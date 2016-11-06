@@ -89,6 +89,9 @@
 
 	var state = _transitImmutableJs2.default.fromJSON(window.__INITIAL_STATE__);
 
+	console.log(state);
+	console.log((0, _moment2.default)(state.calendar.get('activeWeekStartDate')));
+
 	var store = (0, _redux.createStore)(_ducks2.default, state, (0, _redux.applyMiddleware)(_reduxThunk2.default));
 
 	if (false) {
@@ -27480,9 +27483,9 @@
 	  var _ref = arguments[1];
 	  var type = _ref.type;
 
-	  if ((0, _moment2.default)(state.get('activeWeekStartDate')).format('ddd') !== 'Sun') {
-	    return state.set('activeWeekStartDate', (0, _moment2.default)().startOf('week').valueOf());
-	  }
+	  /*if (moment(state.get('activeWeekStartDate')).format('ddd') !== 'Sun') {
+	    return state.set('activeWeekStartDate', moment().startOf('week').valueOf())
+	  }*/
 	  switch (type) {
 	    case NEXT_WEEK:
 	      return state.update('activeWeekStartDate', function (momentDate) {
