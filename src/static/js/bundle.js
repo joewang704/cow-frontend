@@ -27472,7 +27472,7 @@
 	var PREV_WEEK = 'PREV_WEEK';
 
 	var initialState = (0, _immutable.fromJS)({
-	  activeWeekStartDate: (0, _moment2.default)().startOf('week').valueOf()
+	  activeWeekStartDate: (0, _moment2.default)().startOf('isoWeek').valueOf()
 	});
 
 	var reducer = function reducer() {
@@ -27480,7 +27480,9 @@
 	  var _ref = arguments[1];
 	  var type = _ref.type;
 
-	  console.log((0, _moment2.default)(state.toJS())._d);
+	  console.log((0, _moment2.default)((0, _moment2.default)().startOf('isoWeek').valueOf())._d);
+	  console.log((0, _moment2.default)(state.toJS().activeWeekStartDate)._d);
+	  console.log((0, _moment2.default)(state.get('activeWeekStartDate'))._d);
 	  switch (type) {
 	    case NEXT_WEEK:
 	      return state.update('activeWeekStartDate', function (momentDate) {
@@ -41692,6 +41694,7 @@
 	      var nextWeek = _props.nextWeek;
 	      var prevWeek = _props.prevWeek;
 
+	      console.log((0, _moment2.default)(startDateMoment)._d);
 	      return _react2.default.createElement(
 	        'div',
 	        { style: {

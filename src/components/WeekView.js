@@ -44,6 +44,7 @@ class WeekView extends Component {
 
   render() {
     const { startDateMoment, nextWeek, prevWeek } = this.props
+    console.log(moment(startDateMoment)._d)
     return (
       <div style={{
         width: '92%',

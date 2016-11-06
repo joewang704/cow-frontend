@@ -5,11 +5,13 @@ const NEXT_WEEK = 'NEXT_WEEK'
 const PREV_WEEK = 'PREV_WEEK'
 
 const initialState = fromJS({
-  activeWeekStartDate: moment().startOf('week').valueOf()
+  activeWeekStartDate: moment().startOf('isoWeek').valueOf()
 })
 
 const reducer = (state = initialState, { type }) => {
-  console.log(moment(state.toJS())._d)
+  console.log(moment(moment().startOf('isoWeek').valueOf())._d)
+  console.log(moment(state.toJS().activeWeekStartDate)._d)
+  console.log(moment(state.get('activeWeekStartDate'))._d)
   switch (type) {
     case NEXT_WEEK:
       return state.update('activeWeekStartDate', momentDate => moment(momentDate).add(1, 'weeks').valueOf())
