@@ -27483,6 +27483,8 @@
 	  console.log((0, _moment2.default)((0, _moment2.default)().startOf('isoWeek').valueOf())._d);
 	  console.log((0, _moment2.default)(state.toJS().activeWeekStartDate)._d);
 	  console.log((0, _moment2.default)(state.get('activeWeekStartDate'))._d);
+	  console.log((0, _moment2.default)(initialState.toJS().activeWeekStartDate)._d);
+	  console.log((0, _moment2.default)(initialState.get('activeWeekStartDate'))._d);
 	  switch (type) {
 	    case NEXT_WEEK:
 	      return state.update('activeWeekStartDate', function (momentDate) {
