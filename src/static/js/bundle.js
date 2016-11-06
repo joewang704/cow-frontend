@@ -27480,8 +27480,8 @@
 	  var _ref = arguments[1];
 	  var type = _ref.type;
 
-	  if (state.get('activeWeekStartDate').format('ddd') !== 'Sun') {
-	    return state.set('activeWeekStart', (0, _moment2.default)().startOf('week').valueOf());
+	  if ((0, _moment2.default)(state.get('activeWeekStartDate')).format('ddd') !== 'Sun') {
+	    return state.set('activeWeekStartDate', (0, _moment2.default)().startOf('week').valueOf());
 	  }
 	  switch (type) {
 	    case NEXT_WEEK:
@@ -41694,7 +41694,6 @@
 	      var nextWeek = _props.nextWeek;
 	      var prevWeek = _props.prevWeek;
 
-	      console.log((0, _moment2.default)(startDateMoment)._d);
 	      return _react2.default.createElement(
 	        'div',
 	        { style: {

@@ -9,7 +9,7 @@ const initialState = fromJS({
 })
 
 const reducer = (state = initialState, { type }) => {
-  if (state.get('activeWeekStartDate').format('ddd') !== 'Sun') {
+  if (moment(state.get('activeWeekStartDate')).format('ddd') !== 'Sun') {
     return state.set('activeWeekStartDate', moment().startOf('week').valueOf())
   }
   switch (type) {
