@@ -82,7 +82,7 @@ app.get('/', checkAuthMiddleware, (req, res) => {
       return res.send(`Server error: ${err}`)
     }
     console.log(store.getState())
-    console.log(moment().startOf('week').valueOf())
+    console.log(moment().locale('en').startOf('week').valueOf())
     return res.send(renderFullPage(component, store.getState()))
   }).catch((err) => res.send(`Server error: ${err}`))
 })
