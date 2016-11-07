@@ -1,15 +1,15 @@
-import moment from 'moment'
-import 'moment-timezone'
+import { moment } from '../utils/calendar.js'
 import { fromJS } from 'immutable'
 
 const NEXT_WEEK = 'NEXT_WEEK'
 const PREV_WEEK = 'PREV_WEEK'
 
 const initialState = fromJS({
-  activeWeekStartDate: moment().tz('America/New_York').startOf('week').valueOf()
+  activeWeekStartDate: moment().startOf('week').valueOf()
 })
 
 const reducer = (state = initialState, { type }) => {
+  console.log(moment())
   switch (type) {
     case NEXT_WEEK:
       return state.update('activeWeekStartDate', momentDate => moment(momentDate).add(1, 'weeks').valueOf())

@@ -5,7 +5,7 @@ import HTML5Backend from 'react-dnd-html5-backend'
 import { weekFromStartDate } from '../utils/calendar.js'
 import { nextWeek, prevWeek } from '../ducks/calendar.js'
 import DayColumn from './DayColumn'
-import moment from 'moment'
+import { moment } from '../utils/calendar.js'
 
 const mapStateToProps = ({ calendar }) => ({
   startDateMoment: moment(calendar.get('activeWeekStartDate'))

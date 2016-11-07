@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { createItemPlaceholder } from '../../ducks/ui.js'
 import { editItem } from '../../ducks/items.js'
 import DayColumn from './DayColumn'
-import moment from 'moment'
+import { moment } from '../../utils/calendar.js'
 
 const mapStateToProps = ({ items, ui }, ownProps) => {
   let renderItems = []

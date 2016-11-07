@@ -16,8 +16,6 @@ import { getInitialStoreState } from './db.js'
 import { checkAuthMiddleware, login, register } from './auth.js'
 import { getCookies } from './utils.js'
 import jwt from 'jsonwebtoken'
-import moment from 'moment'
-import 'moment-timezone'
 
 const isDevEnvironment = process.env.NODE_ENV === 'dev'
 
