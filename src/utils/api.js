@@ -3,7 +3,7 @@ import cookie from 'react-cookie'
 
 const url = process.env.NODE_ENV === 'dev' ?
   'http://localhost:8888' :
-  'http://cow-backend.herokuapp.com'
+  'https://cow-backend.herokuapp.com'
 
 const api = (endpoint, method, body = null) =>
   fetch(

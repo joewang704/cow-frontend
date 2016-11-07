@@ -13,7 +13,7 @@ module.exports = {
     publicPath: '/webpack/',
   },
   resolve: {
-    extensions: ['', '.js', '.css'],
+    extensions: ['', '.js', '.css', '.json'],
     modulesDirectories: ['node_modules'],
     unsafeCache: true,
   },
@@ -39,6 +39,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015', 'stage-0'],
         },
+      },
+      {
+        include: /\.json$/,
+        loaders: ["json-loader"],
       },
     ],
   },

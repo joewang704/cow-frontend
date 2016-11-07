@@ -17,6 +17,7 @@ import { checkAuthMiddleware, login, register } from './auth.js'
 import { getCookies } from './utils.js'
 import jwt from 'jsonwebtoken'
 import moment from 'moment'
+import 'moment-timezone'
 
 const isDevEnvironment = process.env.NODE_ENV === 'dev'
 
@@ -81,8 +82,6 @@ app.get('/', checkAuthMiddleware, (req, res) => {
     } catch (err) {
       return res.send(`Server error: ${err}`)
     }
-    console.log(store.getState())
-    console.log(moment().locale('en').startOf('isoWeek').valueOf())
     return res.send(renderFullPage(component, store.getState()))
   }).catch((err) => res.send(`Server error: ${err}`))
 })
@@ -99,7 +98,7 @@ const renderFullPage = (component, initialState) => {
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/font-awesome.min.css">
         <link rel="stylesheet" href="static/css/style.css">
-        <link href="http://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" type="text/css">
       </head>
       <body>
         <!--[if lt IE 8]>

@@ -1,17 +1,15 @@
 import moment from 'moment'
+import 'moment-timezone'
 import { fromJS } from 'immutable'
 
 const NEXT_WEEK = 'NEXT_WEEK'
 const PREV_WEEK = 'PREV_WEEK'
 
 const initialState = fromJS({
-  activeWeekStartDate: moment().startOf('isoWeek').valueOf()
+  activeWeekStartDate: moment().tz('America/New_York').startOf('week').valueOf()
 })
 
 const reducer = (state = initialState, { type }) => {
-  /*if (moment(state.get('activeWeekStartDate')).format('ddd') !== 'Sun') {
-    return state.set('activeWeekStartDate', moment().startOf('week').valueOf())
-  }*/
   switch (type) {
     case NEXT_WEEK:
       return state.update('activeWeekStartDate', momentDate => moment(momentDate).add(1, 'weeks').valueOf())

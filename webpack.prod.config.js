@@ -10,7 +10,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['', '.js', '.css'],
+    extensions: ['', '.js', '.css', '.json'],
     modulesDirectories: ['node_modules'],
   },
   module: {
@@ -25,6 +25,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015', 'stage-0'],
         },
+      },
+      {
+        include: /\.json$/,
+        loaders: ["json-loader"],
       },
     ],
   },
