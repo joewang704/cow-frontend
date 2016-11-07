@@ -27476,7 +27476,6 @@
 	  var _ref = arguments[1];
 	  var type = _ref.type;
 
-	  console.log((0, _calendar.moment)());
 	  switch (type) {
 	    case NEXT_WEEK:
 	      return state.update('activeWeekStartDate', function (momentDate) {
