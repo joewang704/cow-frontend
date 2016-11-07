@@ -9,7 +9,6 @@ const initialState = fromJS({
 })
 
 const reducer = (state = initialState, { type }) => {
-  console.log(moment())
   switch (type) {
     case NEXT_WEEK:
       return state.update('activeWeekStartDate', momentDate => moment(momentDate).add(1, 'weeks').valueOf())
