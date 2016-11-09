@@ -25,7 +25,6 @@ class Item extends Component {
   }
 
   handleChange(event) {
-    console.log(event.target.value)
     this.setState({
       text: event.target.value
     })

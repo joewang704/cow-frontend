@@ -27520,14 +27520,6 @@
 	_moment2.default.tz.setDefault('America/New_York');
 
 	exports.moment = _moment2.default;
-
-	/*export const moment = (input = null) => {
-	  if (input === null) {
-	   return m().tz('America/New_York')
-	  }
-	  return m(input).tz('America/New_York')
-	}*/
-
 	var dayMomentToStr = exports.dayMomentToStr = function dayMomentToStr(dayMoment) {
 	  return dayMoment.format('dddd').replace('urday', '').replace('day', '').replace('nes', '');
 	};
@@ -50766,7 +50758,6 @@
 	  _createClass(Item, [{
 	    key: 'handleChange',
 	    value: function handleChange(event) {
-	      console.log(event.target.value);
 	      this.setState({
 	        text: event.target.value
 	      });

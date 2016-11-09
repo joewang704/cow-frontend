@@ -5,13 +5,6 @@ moment.tz.setDefault('America/New_York')
 
 export { moment }
 
-/*export const moment = (input = null) => {
-  if (input === null) {
-   return m().tz('America/New_York')
-  }
-  return m(input).tz('America/New_York')
-}*/
-
 export const dayMomentToStr = (dayMoment) => {
   return dayMoment.format('dddd')
     .replace('urday', '')
