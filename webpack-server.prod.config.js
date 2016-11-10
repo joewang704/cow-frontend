@@ -1,13 +1,29 @@
 const path = require('path');
 const webpack = require('webpack');
+const fs = require('fs');
+
+const nodeModules = {};
+fs.readdirSync('node_modules')
+  .filter(function(x) {
+    return ['.bin'].indexOf(x) === -1;
+  })
+  .forEach(function(mod) {
+    nodeModules[mod] = 'commonjs ' + mod;
+  });
 
 module.exports = {
   entry: [
-    path.resolve(__dirname, 'src/client.js'),
+    path.resolve(__dirname, 'src/server/index.js'),
   ],
+  target: 'node',
+  node: {
+    __dirname: false,
+    __filename: false,
+  },
+  externals: nodeModules,
   output: {
-    path: path.resolve(__dirname, 'src/static/js'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist/server'),
+    filename: 'server-bundle.js',
   },
   resolve: {
     extensions: ['', '.js', '.css', '.json'],
@@ -21,7 +37,7 @@ module.exports = {
         include: [
           path.join(__dirname, 'src')
         ],
-        exclude: /(src\/static|src\/server)/,
+        exclude: /(src\/static)/,
         query: {
           presets: ['react', 'es2015', 'stage-0'],
         },
@@ -40,4 +56,5 @@ module.exports = {
 		})
   ],
 };
+
 

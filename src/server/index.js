@@ -106,7 +106,7 @@ const renderFullPage = (component, initialState) => {
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(transit.toJSON(initialState))}
         </script>
-        <script src="${isDevEnvironment ? '/webpack/bundle.js' : '/static/js/bundle.js'}"></script>
+        <script src="${isDevEnvironment ? '/webpack/bundle.js' : '/static/client-bundle.js'}"></script>
       </body>
     </html>
   `
