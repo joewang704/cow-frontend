@@ -67,7 +67,7 @@
     "startTest": "NODE_ENV=prod babel-node src/server/index.js",
     "start": "NODE_ENV=prod node dist/server/server-bundle.js",
     "buildTest": "webpack --config webpack-client.prod.config.js",
-    "build": "npm run clean &&  npm run serverBuild && npm run clientBuild",
+    "build": "npm run clean && npm run serverBuild && npm run clientBuild",
     "clientBuild": "cp -R src/static dist/static && webpack --config webpack-client.prod.config.js",
     "serverBuild": "webpack --config webpack-server.prod.config.js",
     "clean": "rm -rf dist",
