@@ -1,4 +1,4 @@
-import { moment } from '../utils/calendar.js'
+import moment from 'moment'
 import { fromJS } from 'immutable'
 
 const NEXT_WEEK = 'NEXT_WEEK'

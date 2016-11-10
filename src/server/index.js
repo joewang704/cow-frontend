@@ -1,10 +1,4 @@
 import express from 'express'
-import React from 'react'
-import { createStore } from 'redux'
-import reducers from '../ducks'
-import { renderToString } from 'react-dom/server'
-import App from '../components/App'
-import { Provider } from 'react-redux'
 import transit from 'transit-immutable-js'
 import webpackConfig from '../../webpack.dev.config.js'
 import webpack from 'webpack'
@@ -69,22 +63,11 @@ app.post('/login', (req, res) => {
 
 app.get('/', checkAuthMiddleware, (req, res) => {
   getInitialStoreState(req.token).then((initialState) => {
-    const store = createStore(reducers, initialState)
-    let component
-    try {
-      component = renderToString(
-        <Provider store={store}>
-          <App />
-        </Provider>
-      )
-    } catch (err) {
-      return res.send(`Server error: ${err}`)
-    }
-    return res.send(renderFullPage(component, store.getState()))
+    return res.send(renderFullPage(initialState))
   }).catch((err) => res.send(`Server error: ${err}`))
 })
 
-const renderFullPage = (component, initialState) => {
+const renderFullPage = (initialState) => {
   return `
     <!DOCTYPE html>
     <html>
@@ -102,7 +85,7 @@ const renderFullPage = (component, initialState) => {
         <!--[if lt IE 8]>
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browserhappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="root">${component}</div>
+        <div id="root"></div>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(transit.toJSON(initialState))}
         </script>

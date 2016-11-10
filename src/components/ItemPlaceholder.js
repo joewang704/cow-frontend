@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { createItem } from '../ducks/items.js'
 import { deleteItemPlaceholder } from '../ducks/ui.js'
+import TextArea from 'react-textarea-autosize'
 
 class ItemPlaceholder extends Component {
   constructor(props) {
@@ -64,7 +65,7 @@ class ItemPlaceholder extends Component {
         color: '#ededed',
         borderRadius: '2px',
       }}>
-        <textarea
+        <TextArea
           style={{
             background: 'transparent',
             outline: 'none',

@@ -1,9 +1,4 @@
 import moment from 'moment'
-import 'moment-timezone'
-
-moment.tz.setDefault('America/New_York')
-
-export { moment }
 
 export const dayMomentToStr = (dayMoment) => {
   return dayMoment.format('dddd')

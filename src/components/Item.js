@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { deleteItem, editItem } from '../ducks/items.js'
 import { DragSource } from 'react-dnd'
+import TextArea from 'react-textarea-autosize'
 
 const itemSource = {
   beginDrag: ({ id }) => ({ id })
@@ -76,7 +77,7 @@ class Item extends Component {
         onMouseLeave={() => this.setHovered(false)}
         style={containerStyle}
       >
-        <textarea
+        <TextArea
           style={textBoxStyle}
           value={this.state.text}
           onClick={(event) => event.stopPropagation()}
