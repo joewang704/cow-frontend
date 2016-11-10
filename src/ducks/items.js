@@ -79,12 +79,16 @@ export const editItem = (id, text, date) => {
 export const deleteItem = id => {
   return dispatch => {
     deleteItemInDb(id).then((res) => {
-      dispatch({
-        type: REMOVE_ITEM,
-        payload: {
-          id,
-        },
-      })
+      if (!res.id) {
+        console.log(res)
+      } else {
+        dispatch({
+          type: REMOVE_ITEM,
+          payload: {
+            id,
+          },
+        })
+      }
     })
   }
 }
