@@ -20,7 +20,7 @@ import jwt from 'jsonwebtoken'
 const isDevEnvironment = process.env.NODE_ENV === 'dev'
 
 const app = express()
-const portNum = process.env.PORT || 8000
+const portNum = process.env.PORT || 40
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
