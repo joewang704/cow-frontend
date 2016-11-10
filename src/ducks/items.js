@@ -54,11 +54,11 @@ export const createItem = (text, date) => {
   }
 }
 
-export const editItem = (id, text, date) => {
+export const editItem = (id, text, date = null) => {
   return dispatch => {
     updateItemInDb(id, {
       text,
-      date: date.format('YYYY-MM-DD'),
+      date: date ? date.format('YYYY-MM-DD') : null,
     }).then((res) => {
       if (!res.id) {
         console.log(res)
