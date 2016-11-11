@@ -9,7 +9,7 @@ import transit from 'transit-immutable-js'
 import { AppContainer } from 'react-hot-loader'
 import moment from 'moment'
 
-let state = transit.fromJSON(window.__INITIAL_STATE__)
+const state = transit.fromJSON(window.__INITIAL_STATE__)
 
 const store = createStore(
   rootReducer,

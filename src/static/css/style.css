@@ -8,6 +8,7 @@ html, body {
   height: 100%;
   padding-left: 0px;
   padding-right: 0px;
+  background-color: '#F5F3EE';
 }
 
 #app {

@@ -1,6 +1,5 @@
 import { request, requestBasicAuth } from './utils'
 import { List, Set, OrderedSet, fromJS } from 'immutable'
-import moment from 'moment'
 
 export const getGroups = () => {
   return request('/groups', 'GET')
@@ -36,7 +35,7 @@ export const getItems = (token) => {
         return obj.set(id, fromJS({
           id,
           text,
-          date: date ? moment(date.split('T')[0]).valueOf() : null,
+          date: date ? date.split('T')[0] : null,
         }))
       }, fromJS({}))
     })
