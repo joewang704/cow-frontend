@@ -7,7 +7,8 @@ class ItemPlaceholder extends Component {
   constructor(props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
+    this.onEnter = this.onEnter.bind(this)
+    this.submit = this.submit.bind(this)
     this.onDelete = this.onDelete.bind(this)
     this.state = {
       text: '',
@@ -30,13 +31,17 @@ class ItemPlaceholder extends Component {
     }
   }
 
-  onSubmit(event) {
+  onEnter(event) {
     if (event.keyCode == 13) {
       event.target.blur()
-      this.context.store.dispatch(
-        createItem(this.state.text, this.props.dayMoment)
-      )
+      this.submit()
     }
+  }
+
+  submit() {
+    this.context.store.dispatch(
+      createItem(this.state.text, this.props.dayMoment)
+    )
   }
 
   onDelete(event) {
@@ -57,7 +62,7 @@ class ItemPlaceholder extends Component {
         position: 'relative',
         textAlign: 'center',
         width: '90%',
-        padding: '5px',
+        padding: '6px 6px 10px',
         backgroundColor: '#FF8A80',
         boxShadow: '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
         marginTop: '7%',
@@ -76,7 +81,7 @@ class ItemPlaceholder extends Component {
           value={this.state.text}
           onClick={(event) => event.stopPropagation()}
           onChange={this.handleChange}
-          onKeyDown={this.onSubmit}
+          onKeyDown={this.onEnter}
           autoFocus
         />
         { closeIcon }

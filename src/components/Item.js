@@ -44,7 +44,7 @@ class Item extends Component {
   }
 
   setHovered(hovered) {
-    this.setState({ hovered: hovered })
+    this.setState({ hovered })
   }
 
   render() {
@@ -60,8 +60,7 @@ class Item extends Component {
       position: 'relative',
       textAlign: 'center',
       width: '90%',
-      padding: '5px',
-      //backgroundColor: '#dce',
+      padding: '6px 6px 10px',
       backgroundColor: '#FF8A80',
       boxShadow: '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
       marginTop: '7%',
