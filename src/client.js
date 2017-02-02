@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import rootReducer from './ducks'
 import App from './components/App'
 import thunk from 'redux-thunk'
@@ -10,18 +10,25 @@ import { AppContainer } from 'react-hot-loader'
 import moment from 'moment'
 
 const state = transit.fromJSON(window.__INITIAL_STATE__)
+const isDevEnvironment = process.env.NODE_ENV === 'dev'
 
 state.items = state.items.map(item => {
-  return item.update('date', date => {
-    const today = moment()
-    return moment(date).isBefore(today) ? today : date
-  })
+  const today = moment().startOf('day')
+  const date = item.get('date')
+  if (moment(date).isBefore(today)) {
+    return item.set('date', today).set('actualDate', date)
+  }
+  return item
 })
+
+const composeEnhancers = isDevEnvironment
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  : compose
 
 const store = createStore(
   rootReducer,
   state,
-  applyMiddleware(thunk)
+  composeEnhancers(applyMiddleware(thunk))
 )
 
 if (module.hot) {
