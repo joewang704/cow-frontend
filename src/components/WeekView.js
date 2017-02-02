@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
-import { weekFromStartDate } from '../utils/calendar.js'
+import { nextFiveDays } from '../utils/calendar.js'
 import { nextWeek, prevWeek } from '../ducks/calendar.js'
 import DayColumn from './DayColumn'
 import moment from 'moment'
@@ -73,7 +73,7 @@ class WeekView extends Component {
           boxShadow: '0 0px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
         }}>
           {
-            weekFromStartDate(startDateMoment).map(
+            nextFiveDays(startDateMoment).map(
               day => <DayColumn dayMoment={day} key={day} />)
           }
         </div>

@@ -11,6 +11,13 @@ import moment from 'moment'
 
 const state = transit.fromJSON(window.__INITIAL_STATE__)
 
+state.items = state.items.map(item => {
+  return item.update('date', date => {
+    const today = moment()
+    return moment(date).isBefore(today) ? today : date
+  })
+})
+
 const store = createStore(
   rootReducer,
   state,

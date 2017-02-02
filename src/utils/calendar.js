@@ -19,4 +19,9 @@ export const weekFromStartDate = (startDate) =>
     (num) => moment(startDate).add(num, 'days')
   )
 
+export const nextFiveDays = (dayMoment) =>
+  [0, 1, 2, 3, 4].map(
+    (num) => moment(dayMoment).add(num, 'days')
+  )
+
 export const isCurrentDate = (dayMoment) => dayMoment.isSame(new Date(), 'day')

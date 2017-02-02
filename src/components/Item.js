@@ -70,6 +70,17 @@ class Item extends Component {
       borderRadius: '2px',
     }
 
+    const containerStyle2 = {
+      position: 'relative',
+      textAlign: 'center',
+      width: '90%',
+      cursor: 'default',
+      opacity: isDragging ? 0.5 : 1,
+      color: '#303333',
+      borderRadius: '2px',
+      marginTop: '7%',
+    }
+
     return connectDragSource(
       <div
         onMouseEnter={() => this.setHovered(true)}
@@ -82,6 +93,7 @@ class Item extends Component {
           onClick={(event) => event.stopPropagation()}
           onChange={this.handleChange}
           onKeyDown={this.onSubmit}
+          spellCheck={false}
         />
         { closeIcon }
       </div>

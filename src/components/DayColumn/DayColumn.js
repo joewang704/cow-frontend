@@ -22,7 +22,7 @@ const DayColumn = ({
 }) => {
   const wrapperStyle = {
     height: '100%',
-    width: `${100/7}%`,
+    width: `${100/5}%`,
     borderRight: '1px solid #eee',
   }
   const labelStyle = {

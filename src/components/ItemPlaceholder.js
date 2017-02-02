@@ -77,11 +77,13 @@ class ItemPlaceholder extends Component {
             resize: 'none',
             borderStyle: 'none',
             width: '100%',
+            spellCheck: 'false',
           }}
           value={this.state.text}
           onClick={(event) => event.stopPropagation()}
           onChange={this.handleChange}
           onKeyDown={this.onEnter}
+          spellCheck={false}
           autoFocus
         />
         { closeIcon }
