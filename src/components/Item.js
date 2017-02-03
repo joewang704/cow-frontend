@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { deleteItem, editItem } from '../ducks/items.js'
 import { DragSource } from 'react-dnd'
 import TextArea from 'react-textarea-autosize'
+import moment from 'moment'
 
 const itemSource = {
   beginDrag: ({ id }) => ({ id })
@@ -48,13 +49,27 @@ class Item extends Component {
   }
 
   render() {
-    const { connectDragSource, isDragging } = this.props
+    const { connectDragSource, isDragging, actualDate } = this.props
     const closeIcon = this.state.hovered ?
       <i
         style={closeIconStyle}
         className="fa fa-times"
         onClick={this.onDelete}
       ></i> : null
+    const overdueText = actualDate ?
+      <span
+        style={{
+          color: '#eee',
+          fontSize: '11px',
+          //borderBottom: '1px solid #660700',
+        }}
+      >
+        <span style={{
+          color: 'red',
+          fontWeight: 'bold',
+        }}> Overdue </span>
+        {moment(actualDate).format('MMM D')}
+      </span> : null
 
     const containerStyle = {
       position: 'relative',
@@ -95,6 +110,7 @@ class Item extends Component {
           onKeyDown={this.onSubmit}
           spellCheck={false}
         />
+        { overdueText }
         { closeIcon }
       </div>
     )

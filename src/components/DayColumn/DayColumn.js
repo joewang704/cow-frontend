@@ -61,7 +61,7 @@ const DayColumn = ({
         <div style={dateStyle}>{dayMoment.format('D')}</div>
       </div>
       <div style={mainStyle} onClick={() => createItemPlaceholder(dayMoment)}>
-        { items.map(({ id, text }) => <Item key={id} id={id} text={text} />) }
+        { items.map(({ id, text, actualDate }) => <Item key={id} id={id} text={text} actualDate={actualDate} />) }
         { itemPlaceholder ? <ItemPlaceholder dayMoment={dayMoment}/> : null }
       </div>
     </div>
