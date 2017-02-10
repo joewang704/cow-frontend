@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { deleteItem, editItem } from '../ducks/items.js'
+import { openItemSettings } from '../ducks/ui.js'
 import { DragSource } from 'react-dnd'
 import TextArea from 'react-textarea-autosize'
 import moment from 'moment'
@@ -19,6 +20,7 @@ class Item extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
     this.onDelete = this.onDelete.bind(this)
+    this.openSettings = this.openSettings.bind(this)
     this.setHovered = this.setHovered.bind(this)
     this.state = {
       text: props.text,
@@ -44,18 +46,39 @@ class Item extends Component {
     this.context.store.dispatch(deleteItem(this.props.id))
   }
 
+  openSettings(event) {
+    event.stopPropagation()
+    this.context.store.dispatch(openItemSettings(this.props.id))
+  }
+
   setHovered(hovered) {
     this.setState({ hovered })
   }
 
   render() {
-    const { connectDragSource, isDragging, actualDate } = this.props
-    const closeIcon = this.state.hovered ?
+    const { hovered } = this.state
+    const { id, connectDragSource, isDragging, actualDate } = this.props
+
+    const closeIcon = hovered ?
       <i
         style={closeIconStyle}
         className="fa fa-times"
         onClick={this.onDelete}
       ></i> : null
+
+    const checkIcon = hovered ?
+      <i
+        style={checkIconStyle}
+        className="fa fa-check"
+        onClick={this.onDelete}
+      ></i> : null
+    const settingsIcon = hovered ?
+      <i
+        style={settingsIconStyle}
+        className="fa fa-cog"
+        onClick={this.openSettings}
+      ></i> : null
+
     const overdueText = actualDate ?
       <span
         style={{
@@ -68,14 +91,14 @@ class Item extends Component {
           color: 'red',
           fontWeight: 'bold',
         }}> Overdue </span>
-        {moment(actualDate).format('MMM D')}
+        { moment(actualDate).format('MMM D') }
       </span> : null
 
     const containerStyle = {
       position: 'relative',
       textAlign: 'center',
       width: '90%',
-      padding: '6px 6px 10px',
+      padding: hovered ? '6px 6px 25px' : '6px 6px 10px',
       backgroundColor: '#FF8A80',
       boxShadow: '0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23)',
       marginTop: '7%',
@@ -83,6 +106,7 @@ class Item extends Component {
       opacity: isDragging ? 0.5 : 1,
       color: '#ededed',
       borderRadius: '2px',
+      transition: 'padding-bottom  .1s ease-in',
     }
 
     const containerStyle2 = {
@@ -112,6 +136,8 @@ class Item extends Component {
         />
         { overdueText }
         { closeIcon }
+        { checkIcon }
+        { settingsIcon }
       </div>
     )
   }
@@ -123,12 +149,31 @@ Item.contextTypes = {
 
 export default DragSource('item', itemSource, collect)(Item)
 
+const checkIconStyle = {
+  position: 'absolute',
+  bottom: '4px',
+  left: '5%',
+  zIndex: 10,
+  color: '#eee',
+  fontSize: '16px',
+}
+
+const settingsIconStyle = {
+  position: 'absolute',
+  bottom: '4px',
+  left: '20%',
+  zIndex: 10,
+  color: '#eee',
+  fontSize: '16px',
+}
+
 const closeIconStyle = {
   position: 'absolute',
   right: '3px',
   top: '3px',
   zIndex: 10,
   color: '#eee',
+  fontSize: '16px',
 }
 
 const textBoxStyle = {

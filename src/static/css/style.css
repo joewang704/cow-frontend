@@ -334,10 +334,10 @@ input {
 }
 
 .fa {
-  color: #aaa;
+  color: #fff;
 }
 
 .fa:hover {
-  color: #bbb;
+  color: #ddd;
   cursor: pointer;
 }
