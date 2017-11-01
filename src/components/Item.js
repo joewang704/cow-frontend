@@ -108,7 +108,7 @@ class Item extends Component {
       opacity: isDragging ? 0.5 : 1,
       color: '#ededed',
       borderRadius: '2px',
-      transition: 'padding-bottom  .1s ease-in',
+      transition: hovered != 2 ? 'padding-bottom  .1s ease-in' : null,
     }
 
     const containerStyle2 = {
@@ -124,8 +124,8 @@ class Item extends Component {
 
     return connectDragSource(
       <div
-        onMouseEnter={() => this.setHovered(true)}
-        onMouseLeave={() => this.setHovered(false)}
+        onMouseEnter={() => this.setHovered(1)}
+        onMouseLeave={() => this.setHovered(0)}
         style={containerStyle}
       >
         <ContentEditable

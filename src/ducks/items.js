@@ -29,8 +29,8 @@ const reducer = (state = initialState, { type, payload }) => {
     }
     case REMOVE_ITEM:
       const newState = state.delete(payload.id)
-      // logic to hover over next element on remove
-      return payload.nextId == null ? newState : newState.setIn([payload.nextId, 'hovered'], true)
+      // logic to hover over next element on remove, value of 2 means no transition
+      return payload.nextId == null ? newState : newState.setIn([payload.nextId, 'hovered'], 2)
     case HOVER:
       return state.setIn([payload.id, 'hovered'], payload.hover)
     default:
