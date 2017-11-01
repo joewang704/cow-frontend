@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { createItem } from '../ducks/items.js'
 import { deleteItemPlaceholder } from '../ducks/ui.js'
 import TextArea from 'react-textarea-autosize'
+import ContentEditable from './ContentEditable.js'
 
 class ItemPlaceholder extends Component {
   constructor(props) {
@@ -86,6 +87,20 @@ class ItemPlaceholder extends Component {
           spellCheck={false}
           autoFocus
         />
+      {/*<ContentEditable
+          html={this.state.text}
+          onChange={this.handleChange}
+          style={{
+            background: 'transparent',
+            outline: 'none',
+            resize: 'none',
+            borderStyle: 'none',
+            width: '100%',
+            spellCheck: 'false',
+          }}
+          onKeyDown={this.onEnter}
+          autoFocus
+        />*/}
         { closeIcon }
       </div>
     )

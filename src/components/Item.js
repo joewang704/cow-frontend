@@ -1,9 +1,12 @@
 import React, { Component, PropTypes } from 'react'
-import { deleteItem, editItem } from '../ducks/items.js'
+import { deleteItem, editItem, hover } from '../ducks/items.js'
 import { openItemSettings } from '../ducks/ui.js'
 import { DragSource } from 'react-dnd'
-import TextArea from 'react-textarea-autosize'
+import ContentEditable from './ContentEditable.js'
 import moment from 'moment'
+
+const highlightTimes = (text, times) =>
+  times.reduce((acc, cur) => acc.replace(cur, `<span class="time-mark">${cur}</span>`), text)
 
 const itemSource = {
   beginDrag: ({ id }) => ({ id })
@@ -24,7 +27,6 @@ class Item extends Component {
     this.setHovered = this.setHovered.bind(this)
     this.state = {
       text: props.text,
-      hovered: false,
     }
   }
 
@@ -43,7 +45,7 @@ class Item extends Component {
 
   onDelete(event) {
     event.stopPropagation()
-    this.context.store.dispatch(deleteItem(this.props.id))
+    this.context.store.dispatch(deleteItem(this.props.id, this.props.nextId))
   }
 
   openSettings(event) {
@@ -52,12 +54,12 @@ class Item extends Component {
   }
 
   setHovered(hovered) {
-    this.setState({ hovered })
+    this.context.store.dispatch(hover(this.props.id, hovered))
   }
 
   render() {
-    const { hovered } = this.state
-    const { id, connectDragSource, isDragging, actualDate } = this.props
+    const { text } = this.state
+    const { id, connectDragSource, isDragging, actualDate, parsedTimes, hovered } = this.props
 
     const closeIcon = hovered ?
       <i
@@ -126,13 +128,10 @@ class Item extends Component {
         onMouseLeave={() => this.setHovered(false)}
         style={containerStyle}
       >
-        <TextArea
-          style={textBoxStyle}
-          value={this.state.text}
-          onClick={(event) => event.stopPropagation()}
+        <ContentEditable
+          html={highlightTimes(text, parsedTimes)}
           onChange={this.handleChange}
-          onKeyDown={this.onSubmit}
-          spellCheck={false}
+          style={contentStyle}
         />
         { overdueText }
         { closeIcon }
@@ -184,3 +183,10 @@ const textBoxStyle = {
   width: '100%',
 }
 
+const contentStyle = {
+  minHeight: '24px',
+  width: '100%',
+  textAlign: 'left',
+  padding: '1px 1px 5px 1px',
+  zIndex: 1000,
+}

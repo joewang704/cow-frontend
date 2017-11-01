@@ -7,7 +7,7 @@ const mapStateToProps = ({ ui, items }) => {
     const id = ui.getIn(['itemSettings', 'id'])
     return {
       isOpen: true,
-      item: items.get(id),
+      item: items.get(id).toJS(),
       id,
     }
   }

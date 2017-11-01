@@ -2,7 +2,7 @@ import React from 'react'
 import { DropTarget } from 'react-dnd';
 import Item from '../Item'
 import ItemPlaceholder from '../ItemPlaceholder'
-import { dayMomentToStr, isCurrentDate } from '../../utils/calendar.js'
+import { dayMomentToStr, isCurrentDate, sortByTime } from '../../utils/calendar.js'
 
 const columnTarget = {
   drop(props, monitor) {
@@ -61,7 +61,20 @@ const DayColumn = ({
         <div style={dateStyle}>{dayMoment.format('D')}</div>
       </div>
       <div style={mainStyle} onClick={() => createItemPlaceholder(dayMoment)}>
-        { items.map(({ id, text, actualDate }) => <Item key={id} id={id} text={text} actualDate={actualDate} />) }
+        { items.sort((a, b) => sortByTime(a.startTime, b.startTime))
+            .map(({ id, text, actualDate, parsedTimes, hovered }, index) => {
+              const nextIndex = index + 1
+              const nextId = nextIndex < items.length ? items[nextIndex].id : null
+              return <Item key={id}
+                id={id}
+                text={text}
+                actualDate={actualDate}
+                parsedTimes={parsedTimes}
+                nextId={nextId}
+                hovered={hovered}
+              />
+            }) 
+        }
         { itemPlaceholder ? <ItemPlaceholder dayMoment={dayMoment}/> : null }
       </div>
     </div>

@@ -327,6 +327,10 @@ html, body {
   background-color: #ddd;
 }
 
+.time-mark {
+  text-decoration: underline;
+}
+
 /* Global */
 
 input {
@@ -340,4 +344,12 @@ input {
 .fa:hover {
   color: #ddd;
   cursor: pointer;
+}
+
+.content-editable:hover {
+  cursor: text;
+}
+
+.content-editable:focus {
+  outline: none;
 }

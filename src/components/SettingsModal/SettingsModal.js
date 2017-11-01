@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 const SettingsModal = ({ isOpen, id, closeSettings, item }) => {
   if (isOpen) {
@@ -13,7 +14,6 @@ const SettingsModal = ({ isOpen, id, closeSettings, item }) => {
           backgroundColor: 'rgba(255, 255, 255, 0.75)',
           zIndex: 10,
         }}
-        onClick={closeSettings}
       >
         <div
           style={{
@@ -49,7 +49,7 @@ const SettingsModal = ({ isOpen, id, closeSettings, item }) => {
             </span>
             <i
               className="fa fa-times"
-              onClick={() => {}}
+              onClick={closeSettings}
             ></i>
           </div>
           <div
@@ -59,7 +59,8 @@ const SettingsModal = ({ isOpen, id, closeSettings, item }) => {
               fontSize: '15px',
             }}
           >
-            Content to be added
+            <div>Time: {moment(item.actualDate).format('MM-DD-YYYY HH:mm:ssa')}</div>
+            <div>Set new time: <input type="text"/></div>
           </div>
         </div>
       </div>
